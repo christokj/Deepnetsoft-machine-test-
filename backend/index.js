@@ -7,8 +7,13 @@ const apiRouter = require("./routes");
 dotenv.config();
 const app = express();
 
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://deepnetsoft-machine-test-kmx5rusnk-christo-k-js-projects.vercel.app"
+];
+
 const corsOptions = {
-    origin: process.env.CLIENT_DOMAIN,
+    origin: allowedOrigins,
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true, // Allow credentials (cookies, etc.)
