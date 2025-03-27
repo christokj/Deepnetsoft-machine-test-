@@ -29,6 +29,7 @@ const AddMenuItemForm = () => {
             setPrice("");
             setDescription("");
             console.log(response);
+            alert("Item added successfully!");
         });
     };
 

@@ -7,7 +7,6 @@ function MenuPageHeader() {
 
     return (
         <header className="relative h-[311px]">
-            {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-no-repeat"
                 style={{ backgroundImage: `url('${imageUrl}')` }}
@@ -16,7 +15,7 @@ function MenuPageHeader() {
             </div>
             <div className="relative flex justify-center items-center h-full">
                 <div className="flex flex-col items-center gap-8 max-w-4xl px-4">
-                    <h1 className="text-8xl font-extrabold text-white">MENU</h1>
+                    <h1 className="text-4xl sm:text-8xl font-extrabold text-white">MENU</h1>
                     <p className="text-white max-w-md">
                         Please take a look at our menu featuring food, drinks, and brunch.
                         If you'd like to place an order, use the "Order Online" button located below the menu.

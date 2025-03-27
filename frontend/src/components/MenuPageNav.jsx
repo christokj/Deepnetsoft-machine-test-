@@ -1,10 +1,10 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { setMenu } from '../redux/menuSlice';
 
 function MenuPageNav() {
-
     const dispatch = useDispatch();
+    const selectedMenu = useSelector((state) => state.menu.selectedMenu);
 
     const imageUrl2 = 'https://res.cloudinary.com/dfm6raue1/image/upload/v1743000964/deepnetbackground_musvij.png';
 
@@ -22,13 +22,14 @@ function MenuPageNav() {
                         backgroundSize: 'auto 100%' // Ensures full height while repeating width
                     }}
                 >
-                    <nav className=" text-white flex justify-center items-center h-20">
-                        <ul className="flex justify-center items-center space-x-6 ">
+                    <nav className="text-white flex justify-center items-center h-20">
+                        <ul className="flex justify-center items-center space-x-6">
                             {["FOOD", "DRINKS", "BRUNCH"].map((menu) => (
                                 <li key={menu}>
                                     <button
                                         onClick={() => handleMenuClick(menu)}
-                                        className="bg-black w-24 hover:bg-blue-500 text-white font-semibold py-2 px-4 border border-blue-300 hover:border-transparent rounded"
+                                        className={`w-24 py-2 px-4 font-semibold border border-blue-300 rounded 
+                                        ${selectedMenu === menu ? 'bg-blue-500 text-white' : 'bg-black hover:bg-blue-500 hover:text-white'}`}
                                     >
                                         {menu}
                                     </button>
@@ -36,12 +37,10 @@ function MenuPageNav() {
                             ))}
                         </ul>
                     </nav>
-
                 </div>
             </section>
-            {/* <div className="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-black/90 to-transparent"></div> */}
         </>
-    )
+    );
 }
 
-export default MenuPageNav
+export default MenuPageNav;
