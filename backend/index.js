@@ -25,7 +25,7 @@ connectDB();
 
 // Routes
 app.get("/", (req, res) => {
-    res.send("Hello World!");
+    res.send("Hello World! ");
 });
 
 app.use("/api", apiRouter);
@@ -37,6 +37,7 @@ app.all("*", (req, res, next) => {
 });
 
 const PORT = process.env.PORT;
+
 
 // Start Server
 app.listen(PORT, () => {
